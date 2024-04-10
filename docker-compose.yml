@@ -1,0 +1,25 @@
+services:
+  pipelinerunner:
+    image: pipelinerunner
+    container_name: pipelinerunner
+    build: 
+      context: ./
+      dockerfile: ./containers/pipelinerunner/Dockerfile
+    volumes:
+      - ./:/code
+    environment:
+      DATABASE_NAME: ${DATABASE_NAME}
+      MOTHERDUCK_TOKEN: ${MOTHERDUCK_TOKEN}
+
+  # streamlit:
+  #   image: streamlit
+  #   container_name: streamlit
+  #   build:  
+  #     context: ./
+  #     dockerfile: ./streamlit/Dockerfile
+  #   ports:
+  #     - "8501:8501"
+  #   depends_on:
+  #     - pipelinerunner
+
+ 
