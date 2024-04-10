@@ -1,7 +1,9 @@
+import logging
 import os
 import sys
+
 import duckdb
-import logging
+
 sys.path.insert(0, './logs/')
 # Import the log_config function from the logs.logger module
 from config import log_config
@@ -18,7 +20,9 @@ motherduck_token = os.getenv('MOTHERDUCK_TOKEN')
 
 
 def write_to_motherduck_from_data_frame(data_frame):
-    with duckdb.connect(f'md:{database_name}?motherduck_token={motherduck_token}') as con:
+    with duckdb.connect(
+        f'md:{database_name}?motherduck_token={motherduck_token}'
+    ) as con:
         logger.info('MotherDuck connection successfully initiated.')
         try:
             con.execute(
