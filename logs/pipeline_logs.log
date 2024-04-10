@@ -1,0 +1,16 @@
+2024-04-10 18:08:03,797 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-10 18:08:05,456 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-10 18:08:05,457 [INFO] etl.extract: API request status: 200
+2024-04-10 18:08:05,474 [INFO] etl.transform: There are 73 rows and 10 columns in the Dataframe.
+2024-04-10 18:08:52,554 [INFO] etl.load: MotherDuck connection successfully initiated.
+2024-04-10 18:08:52,643 [ERROR] etl.load: Error writing to MotherDuck: Parser Error: syntax error at or near "rank"
+LINE 3: ...tokens
+                SELECT * FROM         exchangeId              name  ran...
+                                                  ^
+2024-04-10 18:08:52,742 [INFO] __main__: Pipeline execution time: 48.96145 seconds
+2024-04-10 18:08:52,742 [INFO] __main__: Pipeline execution started at: 2024-04-10 18:08:03.780460
+2024-04-10 18:08:52,743 [INFO] __main__: Pipeline execution completed at: 2024-04-10 18:08:52.741910
+2024-04-10 18:08:52,743 [INFO] __main__: Time for extract job: 48.962801 seconds
+2024-04-10 18:08:52,743 [INFO] __main__: Time for transform job: 0.000109 seconds
+2024-04-10 18:08:52,743 [INFO] __main__: Time for load job: 8.1e-05 seconds
+2024-04-10 18:08:52,743 [INFO] __main__: Average pipeline execution time: 16.320997000000002 seconds

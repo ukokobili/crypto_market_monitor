@@ -1,17 +1,13 @@
-import logging
 import os
 import sys
-
+import logging
 import duckdb
-
 sys.path.insert(0, './logs/')
-# Import the log_config function from the logs.logger module
 from config import log_config
 
-# Call the log_config function to configure the logger
+# Call the log_config function 
 log_config()
-
-# Get the logger for the current module (__name__)
+# logger for the current module (__name__)
 logger = logging.getLogger(__name__)
 
 # import datawarehouse variables
@@ -41,6 +37,6 @@ def write_to_motherduck_from_data_frame(data_frame):
                 updated_at = EXCLUDED.updated_at;      
                 """
             )
-            logger.info(f'{con.close()}')
+            logger.info('Successfully wrote to MotherDuck')
         except Exception as e:
             logger.error(f"Error writing to MotherDuck: {e}")

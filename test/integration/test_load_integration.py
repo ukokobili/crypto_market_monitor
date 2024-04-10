@@ -1,4 +1,5 @@
 import os
+
 import pytest
 
 from scripts.etl.extract import get_exchange_data
@@ -25,7 +26,7 @@ def test_write_to_motherduck(mock_duckdb, mocker):
     mock_con = mocker.patch('duckdb.connect', return_value=mock_duckdb)
 
     # Assert expected SQL statement was executed
-    expected_sql = f"""
+    expected_sql = """
     INSERT INTO tokens
     SELECT * FROM data_frame
     ON CONFLICT (exchangeId) DO UPDATE SET

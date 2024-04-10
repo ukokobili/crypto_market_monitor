@@ -13,7 +13,7 @@ shell:
 	docker exec -ti pipelinerunner bash
 
 format:
-	docker exec pipelinerunner python -m black -S --line-length 79 .
+	docker exec pipelinerunner python -m black -S --line-length 95 .
 
 isort:
 	docker exec pipelinerunner isort .

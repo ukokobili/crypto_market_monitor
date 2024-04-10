@@ -1,7 +1,6 @@
 import datetime
 import logging
 import sys
-
 sys.path.insert(0, './logs/')
 from config import log_config
 from etl.extract import get_exchange_data
@@ -58,7 +57,6 @@ def run_pipeline() -> None:
 
     except Exception as e:
         logger.error(f"Error running pipeline: {e}")
-
 
 if __name__ == '__main__':
     run_pipeline()
