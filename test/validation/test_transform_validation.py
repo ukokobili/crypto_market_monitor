@@ -1,12 +1,14 @@
+import sys
+
 import pytest
 
-from scripts.etl.extract import get_exchange_data
-from scripts.etl.transform import transform_exchange_data
+sys.path.insert(0, './scripts/etl/')
+from extract import get_exchange_data  # noqa
+from transform import transform_exchange_data  # noqa
 
 
 @pytest.fixture
 def transformed_data():
-    # Assuming transform_exchange_data returns the transformed data as a DataFrame
     return transform_exchange_data(get_exchange_data())
 
 

@@ -1,6 +1,9 @@
 docker-spin-up:
 	docker compose --env-file env up --build -d
 
+grant:
+	sudo chmod -R u=rwx,g=rwx,o=rwx containers logs scheduler scripts streamlit test
+
 sleeper:
 	sleep 15
 
@@ -13,7 +16,7 @@ shell:
 	docker exec -ti pipelinerunner bash
 
 format:
-	docker exec pipelinerunner python -m black -S --line-length 95 .
+	docker exec pipelinerunner python -m black -S --line-length 79 .
 
 isort:
 	docker exec pipelinerunner isort .

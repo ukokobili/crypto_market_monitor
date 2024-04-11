@@ -1,10 +1,12 @@
 import os
+import sys
 
 import pytest
 
-from scripts.etl.extract import get_exchange_data
-from scripts.etl.load import write_to_motherduck_from_data_frame
-from scripts.etl.transform import transform_exchange_data
+sys.path.insert(0, './scripts/etl/')
+from extract import get_exchange_data  # noqa
+from load import write_to_motherduck_from_data_frame  # noqa
+from transform import transform_exchange_data  # noqa
 
 database_name = os.getenv('DATABASE_NAME')
 motherduck_token = os.getenv('MOTHERDUCK_TOKEN')
@@ -41,5 +43,5 @@ def test_write_to_motherduck(mock_duckdb, mocker):
     updated_at = EXCLUDED.updated_at;
     """
     mock_con.execute.assert_called_once_with(expected_sql)
-    # Assert that the number of rows inserted matches the number of rows in the DataFrame
+    # Assert that the number of rows inserted is same as in the DataFrame
     assert mock_con.execute.call_count == 1

@@ -1,16 +1,26 @@
-2024-04-10 18:08:03,797 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
-2024-04-10 18:08:05,456 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
-2024-04-10 18:08:05,457 [INFO] etl.extract: API request status: 200
-2024-04-10 18:08:05,474 [INFO] etl.transform: There are 73 rows and 10 columns in the Dataframe.
-2024-04-10 18:08:52,554 [INFO] etl.load: MotherDuck connection successfully initiated.
-2024-04-10 18:08:52,643 [ERROR] etl.load: Error writing to MotherDuck: Parser Error: syntax error at or near "rank"
-LINE 3: ...tokens
-                SELECT * FROM         exchangeId              name  ran...
-                                                  ^
-2024-04-10 18:08:52,742 [INFO] __main__: Pipeline execution time: 48.96145 seconds
-2024-04-10 18:08:52,742 [INFO] __main__: Pipeline execution started at: 2024-04-10 18:08:03.780460
-2024-04-10 18:08:52,743 [INFO] __main__: Pipeline execution completed at: 2024-04-10 18:08:52.741910
-2024-04-10 18:08:52,743 [INFO] __main__: Time for extract job: 48.962801 seconds
-2024-04-10 18:08:52,743 [INFO] __main__: Time for transform job: 0.000109 seconds
-2024-04-10 18:08:52,743 [INFO] __main__: Time for load job: 8.1e-05 seconds
-2024-04-10 18:08:52,743 [INFO] __main__: Average pipeline execution time: 16.320997000000002 seconds
+2024-04-11 10:05:31,814 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 10:05:31,875 [ERROR] extract: There was an error with the request, HTTPSConnectionPool(host='api.coincap.io', port=443): Max retries exceeded with url: /v2/exchanges (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fde08570be0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2024-04-11 10:10:32,826 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 10:10:33,482 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-11 10:10:33,487 [INFO] extract: API request status: 200
+2024-04-11 10:10:33,505 [INFO] transform: There are 73 rows & 10 columns.
+2024-04-11 10:10:33,687 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 10:10:34,214 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-11 10:10:34,216 [INFO] extract: API request status: 200
+2024-04-11 10:10:34,221 [INFO] transform: There are 73 rows & 10 columns.
+2024-04-11 10:20:51,885 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 10:20:52,572 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-11 10:20:52,575 [INFO] extract: API request status: 200
+2024-04-11 10:20:52,583 [INFO] transform: There are 73 rows & 10 columns.
+2024-04-11 10:20:52,597 [INFO] load: MotherDuck connection successfully initiated.
+2024-04-11 10:20:52,597 [INFO] load: Successfully wrote to MotherDuck
+2024-04-11 10:20:52,765 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 10:20:53,318 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-11 10:20:53,319 [INFO] extract: API request status: 200
+2024-04-11 10:20:53,324 [INFO] transform: There are 73 rows & 10 columns.
+2024-04-11 11:44:31,571 [INFO] numexpr.utils: NumExpr defaulting to 4 threads.
+2024-04-11 11:44:31,852 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): api.coincap.io:443
+2024-04-11 11:44:32,623 [DEBUG] urllib3.connectionpool: https://api.coincap.io:443 "GET /v2/exchanges HTTP/1.1" 200 None
+2024-04-11 11:44:32,624 [INFO] etl.extract: API request status: 200
+2024-04-11 11:44:32,628 [INFO] etl.transform: There are 73 rows & 10 columns.
+2024-04-11 11:44:35,387 [ERROR] __main__: Error running pipeline: Invalid Input Error: Initialization function "motherduck_init" from file "/home/nerd/.duckdb/extensions/v0.9.2/linux_amd64_gcc4/motherduck.duckdb_extension" threw an exception: "Invalid Input Error: Initialization function "motherduck_init" from file "/home/nerd/.duckdb/extensions/v0.9.2/linux_amd64_gcc4/motherduck.v1.15.25.duckdb_extension" threw an exception: "IO Error: Request failed: Jwt is not in the form of Header.Payload.Signature with two dots and 3 sections (UNAUTHENTICATED, RPC 'GET_WELCOME_PACK', request id: '818eccc2-62fd-4764-882e-3afbc8eac4d0')""

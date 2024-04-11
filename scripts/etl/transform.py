@@ -1,10 +1,12 @@
 import datetime
 import logging
 import sys
-import pandas as pd
 from typing import Any, Optional
+
+import pandas as pd
+
 sys.path.insert(0, './logs/')
-from config import log_config
+from config import log_config  # noqa
 
 log_config()
 
@@ -64,12 +66,12 @@ def transform_exchange_data(results) -> pd.DataFrame:
         # Convert to dataframe
         data_ = pd.DataFrame(coincap)
         logger.info(
-            f'There are {data_.shape[0]} rows & {data_.shape[1]} columns in the Dataframe.'
+            f'There are {data_.shape[0]} rows & {data_.shape[1]} columns.'
         )
 
     except Exception as e:
         logger.exception(
-            f'{data_ } : - exception {e} encountered while transforming data from the API'
+            f'{data_ } : -exception {e} encountered during transformation'
         )
 
     return data_
