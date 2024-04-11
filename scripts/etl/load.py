@@ -21,7 +21,7 @@ def write_to_motherduck_from_data_frame(data_frame):
     con = duckdb.connect(
         f'md:{database_name}?motherduck_token={motherduck_token}'
     )
-    logger.info('MotherDuck connection successfully initiated.')
+    logger.info('MotherDuck connection successfully initiated!')
     try:
         con.execute(
             f"""
