@@ -18,11 +18,7 @@ logger = logging.getLogger(__name__)
 def get_utc_from_unix_time(
     unix_ts: Optional[Any], second: int = 1000
 ) -> Optional[datetime.datetime]:
-    return (
-        datetime.datetime.utcfromtimestamp(int(unix_ts) / second)
-        if unix_ts
-        else None
-    )
+    return datetime.datetime.utcfromtimestamp(int(unix_ts) / second) if unix_ts else None
 
 
 # Function for cleaning and transforming the data
@@ -35,31 +31,21 @@ def transform_exchange_data(results) -> pd.DataFrame:
             exchange = {
                 'exchangeId': str(result['exchangeId']),
                 'name': str(result['name']),
-                'rank': (
-                    int(result['rank']) if result['rank'] is not None else None
-                ),
+                'rank': (int(result['rank']) if result['rank'] is not None else None),
                 'percentTotalVolume': (
                     float(result['percentTotalVolume'])
                     if result['percentTotalVolume'] is not None
                     else None
                 ),
                 'volumeUsd': (
-                    float(result['volumeUsd'])
-                    if result['volumeUsd'] is not None
-                    else None
+                    float(result['volumeUsd']) if result['volumeUsd'] is not None else None
                 ),
                 'tradingPairs': (
-                    int(result['tradingPairs'])
-                    if result['tradingPairs'] is not None
-                    else None
+                    int(result['tradingPairs']) if result['tradingPairs'] is not None else None
                 ),
                 'socket': bool(result['socket']),
                 'exchangeUrl': str(result['exchangeUrl']),
-                'updated': (
-                    int(result['updated'])
-                    if result['updated'] is not None
-                    else None
-                ),
+                'updated': (int(result['updated']) if result['updated'] is not None else None),
                 'updated_at': get_utc_from_unix_time(result.get('updated')),
             }
             coincap.append(exchange)
