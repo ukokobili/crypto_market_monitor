@@ -18,7 +18,8 @@ motherduck_token = os.getenv('MOTHERDUCK_TOKEN')
 
 
 def write_to_motherduck_from_data_frame(data_frame):
-    with duckdb.connect(f'md:{database_name}?motherduck_token={motherduck_token}') as con:
+    with duckdb.connect(f'md:{database_name}?motherduck_token={motherduck_token}'
+    ) as con:
         logger.info('MotherDuck connection successfully initiated.')
         try:
             con.execute(
