@@ -32,5 +32,12 @@ lint:
 
 ci: isort format type lint pytest
 
+start-etl:
+	docker exec pipelinerunner service cron start
+
+status-etl:
+
+	docker exec pipelinerunner service cron status
+
 stop-etl: 
 	docker exec pipelinerunner service cron stop
